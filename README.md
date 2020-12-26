@@ -16,11 +16,29 @@
 
 ## Installation
 
-TODO
+```html
+<script src="https://unpkg.com/@formspark/formtrack"></script>
+```
 
 ## Usage
 
-TODO
+Add a `data-formtrack` attribute to your form element.
+
+```html
+<form action="https://submit-form.com" data-formtrack>
+  <input type="text" name="message" />
+  <button type="submit">Send</button>
+</form>
+```
+
+## Supported parameters
+
+- referrer
+- utm_campaign
+- utm_content
+- utm_medium
+- utm_source
+- utm_term
 
 ## License
 
