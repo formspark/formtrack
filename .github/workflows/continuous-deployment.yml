@@ -36,11 +36,6 @@ jobs:
         env:
           CI: true
 
-      - name: Lint
-        run: npm run lint
-        env:
-          CI: true
-
       - name: Build
         run: npm run build
         env:
