@@ -40,7 +40,7 @@ Add a `data-formtrack` attribute to your form element.
 
 Formtrack will now automatically inject the supported parameters into your HTML form submissions.
 
-### Supported parameters
+## Supported parameters
 
 | Parameter    | Purpose                                                                                                                                                                | Example                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
