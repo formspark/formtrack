@@ -24,7 +24,7 @@ const appendOrUpdateFormtrackInput = ({
 };
 
 const addSubmitListener = () => {
-  if (document) {
+  if (typeof document !== "undefined") {
     document.addEventListener("submit", (event) => {
       try {
         const formEventTarget = event.target;
