@@ -23,7 +23,7 @@ const appendOrUpdateFormtrackInput = ({
   input.setAttribute("value", value);
 };
 
-const addDocumentEventListener = () => {
+const addSubmitListener = () => {
   if (document) {
     document.addEventListener("submit", (event) => {
       try {
@@ -68,4 +68,4 @@ const addDocumentEventListener = () => {
   }
 };
 
-addDocumentEventListener();
+addSubmitListener();
