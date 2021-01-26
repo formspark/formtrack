@@ -29,7 +29,7 @@ const addSubmitListener = () => {
       try {
         const formEventTarget = event.target;
         if (formEventTarget) {
-          const formElement = formEventTarget as HTMLElement;
+          const formElement = formEventTarget as HTMLFormElement;
           const shouldTrack =
             typeof formElement.dataset.formtrack !== "undefined";
           if (shouldTrack) {
