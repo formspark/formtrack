@@ -4,7 +4,7 @@ const addSubmitListener = () => {
   if (typeof document !== "undefined") {
     if (!window.__FORMTRACK_SUBMIT_LISTENER__) {
       window.__FORMTRACK_SUBMIT_LISTENER__ = true;
-      document.addEventListener("submit", (event) => {
+      const listener = document.addEventListener("submit", (event) => {
         try {
           const formEventTarget = event.target;
           if (formEventTarget) {
@@ -44,8 +44,10 @@ const addSubmitListener = () => {
         }
         return true;
       });
+      return listener;
     }
   }
+  return null;
 };
 
 export default addSubmitListener;
