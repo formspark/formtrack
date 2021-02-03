@@ -9,17 +9,6 @@ const appendOrUpdateInput = ({
   name: string;
   value: string;
 }) => {
-  console.log(
-    JSON.stringify(
-      {
-        id,
-        name,
-        value,
-      },
-      null,
-      2
-    )
-  );
   let input = document.getElementById(id);
   if (!input) {
     const newInput = document.createElement("input");
