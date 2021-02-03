@@ -32,6 +32,9 @@ jobs:
       - name: Test
         run: npm run test
 
+      - name: Build
+        run: npm run build
+
       - name: Bump version
         uses: phips28/gh-action-bump-version@master
         with:
