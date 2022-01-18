@@ -26,7 +26,7 @@ Copying these parameters and injecting them into your form submissions manually 
 Add the Formtrack script.
 
 ```html
-<script src="https://unpkg.com/@formspark/formtrack"></script>
+<script src="https://unpkg.com/@formspark/formtrack" async></script>
 ```
 
 Add a `data-formtrack` attribute to your form element.
