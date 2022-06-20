@@ -18,6 +18,7 @@ const addSubmitListener = () => {
                 );
                 const supportedParameterNames = [
                   "referrer",
+                  "ref",
                   "utm_campaign",
                   "utm_content",
                   "utm_medium",
