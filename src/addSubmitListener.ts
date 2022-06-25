@@ -17,8 +17,8 @@ const addSubmitListener = () => {
                   window.location.search
                 );
                 const supportedParameterNames = [
-                  "referrer",
                   "ref",
+                  "referrer",
                   "utm_campaign",
                   "utm_content",
                   "utm_medium",
