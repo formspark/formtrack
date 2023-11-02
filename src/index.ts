@@ -1,11 +1,11 @@
 import "url-search-params-polyfill";
 
-import addSubmitListener from "./addSubmitListener";
+import registerPoller from "./registerPoller";
 
 declare global {
   interface Window {
-    __FORMTRACK_SUBMIT_LISTENER__: boolean | undefined;
+    __FORMTRACK_POLLER__: boolean | undefined;
   }
 }
 
-addSubmitListener();
+registerPoller();
