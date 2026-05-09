@@ -9,3 +9,5 @@ declare global {
 }
 
 registerPoller();
+
+export default registerPoller;
