@@ -4,19 +4,20 @@ const appendOrUpdateInput = ({
   name,
   value,
 }: {
-  formElement: HTMLElement;
+  formElement: HTMLFormElement;
   id: string;
   name: string;
   value: string;
 }) => {
-  let input = document.getElementById(id);
+  const existing = formElement.elements.namedItem(name);
+  let input =
+    existing instanceof HTMLInputElement ? existing : null;
   if (!input) {
-    const newInput = document.createElement("input");
-    newInput.setAttribute("type", "hidden");
-    newInput.setAttribute("id", id);
-    newInput.setAttribute("name", name);
-    formElement.appendChild(newInput);
-    input = newInput;
+    input = document.createElement("input");
+    input.setAttribute("type", "hidden");
+    input.setAttribute("id", id);
+    input.setAttribute("name", name);
+    formElement.appendChild(input);
   }
   input.setAttribute("value", value);
 };
