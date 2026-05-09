@@ -12,12 +12,10 @@
     Sponsored by <a href="https://formspark.io">Formspark</a>, the simple & powerful form solution for developers.
 </p>
 
-[![Continuous deployment](https://github.com/formspark/formtrack/workflows/Continuous%20deployment/badge.svg)](https://github.com/formspark/formtrack/actions?query=workflow%3A%22Continuous+deployment%22)
-
 ## About
 
 Marketers use UTM parameters to track the effectiveness of online campaigns across traffic sources and publishing media.
-The parameters identify the campaign that refers traffic to a specific website and can be parsed by analytics tools and used to populate reports.
+The parameters identify the campaign that drives traffic to a specific website and can be parsed by analytics tools and used to populate reports.
 
 Copying these parameters and injecting them into your form submissions manually is tedious and error-prone, we built Formtrack to automate this process.
 
