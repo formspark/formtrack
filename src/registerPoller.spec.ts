@@ -139,6 +139,27 @@ describe("registerPoller", () => {
       poller?.unregister();
     });
 
+    it("decodes URL-encoded parameter values", () => {
+      history.replaceState(
+        null,
+        "",
+        "/?utm_term=running+shoes&utm_source=a%26b",
+      );
+      document.body.innerHTML = `<form data-formtrack></form>`;
+
+      const poller = registerPoller();
+
+      const form = document.querySelector("form")!;
+      expect(
+        (form.querySelector("#formtrack_utm_term") as HTMLInputElement).value,
+      ).toBe("running shoes");
+      expect(
+        (form.querySelector("#formtrack_utm_source") as HTMLInputElement).value,
+      ).toBe("a&b");
+
+      poller?.unregister();
+    });
+
     it("does nothing when the URL has no matching parameters", () => {
       history.replaceState(null, "", "/");
       document.body.innerHTML = `<form data-formtrack></form>`;

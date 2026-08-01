@@ -17,7 +17,7 @@
 Marketers use UTM parameters to track the effectiveness of online campaigns across traffic sources and publishing media.
 The parameters identify the campaign that drives traffic to a specific website and can be parsed by analytics tools and used to populate reports.
 
-Copying these parameters and injecting them into your form submissions manually is tedious and error-prone, we built Formtrack to automate this process.
+Copying these parameters and injecting them into your form submissions manually is tedious and error-prone, so we built Formtrack to automate this process.
 
 ## Installation & usage
 
@@ -38,13 +38,23 @@ Add a `data-formtrack` attribute to your form element.
 
 Formtrack will now automatically inject the supported parameters into your HTML form submissions.
 
+Alternatively, install the package with npm.
+
+```bash
+npm install @formspark/formtrack
+```
+
+```js
+import "@formspark/formtrack";
+```
+
 ## Supported parameters
 
 | Parameter    | Purpose                                                                                                                                                                | Example                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| ref          | Identifies which site sent the traffic, not an official parameter.                                                                                                     | ref=producthunt                              |
-| referrer     | Identifies which site sent the traffic, not an official parameter.                                                                                                     | referrer=producthunt                         |
-| utm_source   | Identifies which site sent the traffic, and is a required parameter.                                                                                                   | utm_source=google                            |
+| ref          | Identifies which site sent the traffic. Not an official UTM parameter.                                                                                                 | ref=producthunt                              |
+| referrer     | Identifies which site sent the traffic. Not an official UTM parameter.                                                                                                 | referrer=producthunt                         |
+| utm_source   | Identifies which site sent the traffic. This is a required parameter.                                                                                                  | utm_source=google                            |
 | utm_medium   | Identifies what type of link was used, such as cost per click or email.                                                                                                | utm_medium=cpc                               |
 | utm_campaign | Identifies a specific product promotion or strategic campaign.                                                                                                         | utm_campaign=spring_sale                     |
 | utm_term     | Identifies search terms.                                                                                                                                               | utm_term=running+shoes                       |
@@ -54,7 +64,7 @@ Formtrack will now automatically inject the supported parameters into your HTML 
 
 You have the flexibility to define a list of custom parameters.
 
-Include a `data-formtrack-params` attribute within your form element, and populate it with a comma-separated list of the desired parameters.
+Include a `data-formtrack-params` attribute on your form element and populate it with a comma-separated list of the desired parameters.
 
 ```html
 <form

@@ -33,7 +33,7 @@ describe("appendOrUpdateInput", () => {
     });
 
     const preExistingInputElement = formElement.children.namedItem(
-      childInputElement.name
+      childInputElement.name,
     ) as HTMLInputElement;
 
     expect(preExistingInputElement.id).toEqual(childInputElement.id);
@@ -41,12 +41,36 @@ describe("appendOrUpdateInput", () => {
     expect(preExistingInputElement.value).toEqual(childInputElement.value);
 
     const appendedInputElement = formElement.children.namedItem(
-      "new-name"
+      "new-name",
     ) as HTMLInputElement;
 
     expect(appendedInputElement.id).toEqual("new-id");
     expect(appendedInputElement.name).toEqual("new-name");
     expect(appendedInputElement.value).toEqual("new-value");
+  });
+
+  it("should append a new input when a non-input control shares the name", () => {
+    const { formElement } = createForm();
+
+    const selectElement = document.createElement("select");
+    selectElement.setAttribute("name", "utm_source");
+    formElement.appendChild(selectElement);
+
+    appendOrUpdateInput({
+      formElement,
+      id: "formtrack_utm_source",
+      name: "utm_source",
+      value: "google",
+    });
+
+    expect(selectElement.getAttribute("value")).toBeNull();
+
+    const appendedInputElement = formElement.querySelector(
+      "#formtrack_utm_source",
+    ) as HTMLInputElement;
+
+    expect(appendedInputElement.name).toEqual("utm_source");
+    expect(appendedInputElement.value).toEqual("google");
   });
 
   it("should update an input field if it does exist", () => {
@@ -60,7 +84,7 @@ describe("appendOrUpdateInput", () => {
     });
 
     const updatedInputElement = formElement.children.namedItem(
-      childInputElement.name
+      childInputElement.name,
     ) as HTMLInputElement;
 
     expect(updatedInputElement.id).toEqual(childInputElement.id);
