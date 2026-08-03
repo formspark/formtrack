@@ -43,7 +43,7 @@ const registerPoller = () => {
             if (value) {
               appendOrUpdateInput({ formElement, id, name, value });
             }
-          }
+          },
         );
       });
     };

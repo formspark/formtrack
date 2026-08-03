@@ -10,8 +10,7 @@ const appendOrUpdateInput = ({
   value: string;
 }) => {
   const existing = formElement.elements.namedItem(name);
-  let input =
-    existing instanceof HTMLInputElement ? existing : null;
+  let input = existing instanceof HTMLInputElement ? existing : null;
   if (!input) {
     input = document.createElement("input");
     input.setAttribute("type", "hidden");
